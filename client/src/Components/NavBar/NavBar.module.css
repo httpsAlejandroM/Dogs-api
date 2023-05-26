@@ -1,0 +1,70 @@
+.mainContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffad1f;
+    width: 100%;
+    height: 8vh;
+  }
+  
+  .mainContainer a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .mainContainer a:hover {
+    color: #666;
+  }
+  
+  .mainContainer div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mainContainer select {
+    margin-left: 1rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .mainContainer select:focus {
+    outline: none;
+    border-color: #666;
+  }
+
+  .mainContainer button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .mainContainer button:hover {
+    background-color: #666;
+  }
+
+  .inputStyle {
+    margin-left: 1rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .inputStyle:focus {
+    outline: none;
+    border-color: #666;
+  }

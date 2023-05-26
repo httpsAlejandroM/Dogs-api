@@ -1,0 +1,10 @@
+export const GET_DOGS = "GET_DOGS";
+export const DOG_DETAIL = "DOG_DETAIL";
+export const DOG_BY_TEMPERAMENTS = "DOG_BY_TEMPERAMENTS";
+export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
+export const DOG_BY_SOURCE = "DOG_BY_SOURCE";
+export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT"
+export const SEARCH_DOG = "SEARCH_DOG";
+export const ORDER_ALPHA = "ORDER_ALPHA"    
+export const GET_DETAIL = "GET_DETAIL"
+export const CREATE_DOG = "CREATE_DOG"
