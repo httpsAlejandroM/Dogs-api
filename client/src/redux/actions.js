@@ -2,9 +2,15 @@ import axios from "axios";
 import { GET_DOGS, DOG_DETAIL,DOG_BY_TEMPERAMENTS, DOG_BY_SOURCE, 
     GET_TEMPERAMENTS, ORDER_BY_WEIGHT, SEARCH_DOG, ORDER_ALPHA, GET_DETAIL, CREATE_DOG } from "./actionsType";
 
-export const getDogs =  () => {
+
+
+    axios.defaults.baseURL = "https://dogs-api-r2n1.onrender.com"
+
+    // axios.defaults.baseURL = "http://localhost:3001"
+
+    export const getDogs =  () => {
 return async function (dispatch){
-    const dogs = (await axios.get(`https://dogs-api-r2n1.onrender.com/dogs`)).data;
+    const dogs = (await axios.get(`/dogs`)).data;
     return dispatch({type:GET_DOGS, payload:dogs})
 }
 }
@@ -12,7 +18,7 @@ return async function (dispatch){
 
 export const dogDetail = (id) => {
     return async function(dispatch){
-        const dog = (await axios.get(`https://dogs-api-r2n1.onrender.com/dogs/${id}`)).data;
+        const dog = (await axios.get(`/dogs/${id}`)).data;
         dispatch({type:DOG_DETAIL , payload:dog})
     }
 }
@@ -25,7 +31,7 @@ export const filterBySource = (source) => {
 
 export const getTemperaments = () => {
     return async function (dispatch){
-        const temperaments = (await axios.get(`https://dogs-api-r2n1.onrender.com/temperaments`)).data.map(t => t);
+        const temperaments = (await axios.get(`/temperaments`)).data.map(t => t);
         dispatch({type:GET_TEMPERAMENTS, payload:temperaments})
     }
 }
@@ -44,7 +50,7 @@ export const orderByWeight = (weight) => {
 
 export const searchDogByName = (name) => {
     return async function (dispatch){
-        const dogs = (await axios.get(`https://dogs-api-r2n1.onrender.com/dogs?name=${name}`)).data;
+        const dogs = (await axios.get(`/dogs?name=${name}`)).data;
       return  dispatch({type:SEARCH_DOG, payload: dogs})
     }
 }
@@ -58,7 +64,7 @@ export const orderAlpha = (order) => {
 export const getDetail = (id) => {
     console.log(id)
     return async function (dispatch){
-        const dog = (await axios.get(`https://dogs-api-r2n1.onrender.com/dogs/${id}`)).data;
+        const dog = (await axios.get(`/dogs/${id}`)).data;
         console.log(dog)
         return dispatch({type: GET_DETAIL, payload: dog})
     }
@@ -67,7 +73,7 @@ export const getDetail = (id) => {
 export const postDog = ({name, image, height, weight, life_span, temperamentId}) => {
     return async function (dispatch){
         try {
-            const response = await axios.post('https://dogs-api-r2n1.onrender.com/dogs', { name, image, height, weight, life_span, temperamentId });
+            const response = await axios.post('/dogs', { name, image, height, weight, life_span, temperamentId });
             dispatch({
               type: CREATE_DOG,
               payload: response.data
