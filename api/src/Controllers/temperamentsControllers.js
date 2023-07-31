@@ -1,6 +1,6 @@
 const axios = require("axios")
 const { Dogs, Temperament } = require("../db")
-const { API_KEY } = process.env;
+const  API_KEY  = "live_FOzu4lM1h36Vo0P4qH6VjkR26qqnn0QDfDykKeDl1Fg0diHP2CkRz2PuHvTGkKTw"
 
 
 const getTemperaments = async () => {
